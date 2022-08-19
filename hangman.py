@@ -20,7 +20,7 @@ def hangman():
 
     lives = 7
 
-    while len(word_letters) > 0 and lives >0:
+    while len(word_letters) > 0 and lives > 0:
         print(f'You have {lives} lives, think better!')
         print('You have used these letters: ', ' '.join(used_letters))
 
@@ -41,6 +41,10 @@ def hangman():
         else:
             print('invalid character you dumb!')
 
+    if lives == 0:
+        print(f'You died, the word was {word}')
+    elif len(word_letters) == 0:
+        print(f'You\'we guessed it, it\'s {word}')
 
 if __name__ == '__main__':
     hangman()
